@@ -327,12 +327,12 @@ h6,
     align-items: center;
     justify-content: center;
     background: var(--primary);
-    border-radius: 2px;
-    transform: rotate(-45deg);
+    border-radius: 15px;
+    transform: rotate(-90deg);
 }
 
 .service-item .service-icon i {
-    transform: rotate(45deg);
+    transform: rotate(90deg);
 }
 
 .service-item a.btn {
