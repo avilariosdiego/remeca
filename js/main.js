@@ -34,30 +34,38 @@
     $(window).on("load resize", function() {
         if (this.matchMedia("(min-width: 992px)").matches) {
             $dropdown.hover(
-            function() {
-                const $this = $(this);
-                $this.addClass(showClass);
-                $this.find($dropdownToggle).attr("aria-expanded", "true");
-                $this.find($dropdownMenu).addClass(showClass);
-            },
-            function() {
-                const $this = $(this);
-                $this.removeClass(showClass);
-                $this.find($dropdownToggle).attr("aria-expanded", "false");
-                $this.find($dropdownMenu).removeClass(showClass);
-            }
-            );
+                function() {
+                    const $this = $(this);
+                    $this.addClass(showClass);
+                    $this.find($dropdownToggle).attr("aria-expanded", "true");
+                    $this.find($dropdownMenu).addClass(showClass);
+                },
+                function() {
+                    const $this = $(this);
+                    $this.removeClass(showClass);
+                    $this.find($dropdownToggle).attr("aria-expanded", "false");
+                    $this.find($dropdownMenu).removeClass(showClass);
+                }
+                );
         } else {
             $dropdown.off("mouseenter mouseleave");
         }
     });
 
-
-    // Facts counter
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 20,
-        time: 4000
+    // Facts counter with "+" sign before numbers
+    $('[data-toggle="counter-up2"]').counterUp({
+      delay: 40,
+      time: 8000,
     });
+
+
+    // Facts counter with "+" sign before numbers
+    $('[data-toggle="counter-up"]').counterUp({
+      delay: 30,
+      time: 8000,
+      formatter: function (count) {return "+" + count;}
+    });
+
     
     
     // Back to top button
